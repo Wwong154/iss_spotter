@@ -24,8 +24,6 @@ const { nextISSTimesForMyLocation } = require('./iss');
 //  }
 //  console.log('It worked!', time);
 //});
-
-
 nextISSTimesForMyLocation((error, passTimes) => {
   if (error) {
     return console.log("It didn't work!", error);

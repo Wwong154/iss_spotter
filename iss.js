@@ -58,7 +58,12 @@ const nextISSTimesForMyLocation = function(cb) {
         if (err) {
           return cb(err,null);
         }
-        cb(null, time);
+        let result = [];
+        for (const pass of time){
+          let date = new Date(pass.risetime * 1000);
+          result.push(`Next pass at ${date} for ${pass.duration} seconds!`)
+        }
+        cb(null, result);
       });
     });
   });
